@@ -24,10 +24,10 @@ public class ShellSort {
 		for(int gap = arr.length/2;gap > 0;gap /=2 ) {
 			int temp = 0;
 			for(int i =gap;i<arr.length;i++) {
-				//遍历各组中所有的 元素，步长gap
+				//·遍历各组中所有的 元素，步长gap
 				for(int j = i-gap;j >= 0;j-=gap) {
 					if(arr[j] > arr[j+gap]) {
-						//如果当前元素大于同组的那个数，则交换
+						//·如果当前元素大于同组的那个数，则交换
 						temp = arr[j];
 						arr[j] = arr[j+gap];
 						arr[j+gap] = temp;

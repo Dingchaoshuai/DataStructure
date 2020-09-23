@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class SimpleSelectionSort {
 	public static void main(String[] args) {
-		int[] arr= {101,34,119,1};
+		int[] arr= {10,34,119,1,5,7,45};
 		selectSort(arr);
 	}
 	public static void selectSort(int arr[]) {

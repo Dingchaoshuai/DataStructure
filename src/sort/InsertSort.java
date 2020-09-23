@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class InsertSort {
 	public static void main(String[] args) {
-		int[] arr= {101,34,9,1};
+		int[] arr= {40,34,119,1,51,7,45};
 		insertSort(arr);
 	}
 	
@@ -22,21 +22,23 @@ public class InsertSort {
 			arr[insertIndex + 1]  = arr[insertIndex];
 			insertIndex--;
 		}
-		//退出while循环时，说明找到插入位置insertIndex+1
+		//·退出while循环时，说明找到插入位置insertIndex+1
 		arr[insertIndex + 1] = insertVal;
 		*/
 		
 		
-		//使用for循环
+		//·使用for循环从二个数开始
 		for(int i = 1;i< arr.length;i++) {
+			//·保存第i位的值
 			int insertVal = arr[i];
+			//·前一位的位置
 			int insertIndex = i - 1;
 			while(insertIndex >=0 && insertVal <arr[insertIndex]) {
 				arr[insertIndex + 1]  = arr[insertIndex];
 				insertIndex--;
 			}
 			arr[insertIndex + 1] = insertVal;
-			System.out.println(Arrays.toString(arr));
+			System.out.println("第"+ i +"趟" + Arrays.toString(arr));
 		}
 	} 
 }

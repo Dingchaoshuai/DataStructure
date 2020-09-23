@@ -13,19 +13,21 @@ public class QuickSort {
 		if(l < r) {
 			int i = l;
 			int j = r;
+			//·将第一个数作为开始基准 
+			//·取出第一个数 可以理解为在i的位置挖了一个坑 之后将其他数填入
 			int x = arr[i];
 			while(i < j) {
-				//从右向左找到小于x 的数来填充arr[l]
+				//·从右向左找到小于x 的数来填充arr[i]
 				while(i < j && arr[j]>=x) {
-					//找到 r-1
+					//找到 j-1
 					j--;
 				}
-				//把找到的这个数填充道a[l]，先判断r--后l r是否相等
+				//·循环结束后找到值把找到的这个数填充道a[i]，先判断j-1后i j是否相等
 				if(i < j) {
 					arr[i] = arr[j];
 					i++;
 				}
-				
+				//·从左向右找到大于x的数填充道arr[j]
 				while(i< j && arr[i] < x) {
 					i++;
 				}
@@ -34,6 +36,7 @@ public class QuickSort {
 					j--;
 				}
 			}
+			//·循环结束后 i的位置就是x在序列中的最终位置
 			arr[i]= x;
 			quickSort(arr, l, i-1);
 			quickSort(arr, i+1, r);
